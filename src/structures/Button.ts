@@ -1,5 +1,5 @@
 import { ButtonInteraction } from "discord.js";
-import Client from "@/Structures/Client.js";
+import Client from "@/structures/Client.js";
 
 export default class Button {
   readonly customId: string;

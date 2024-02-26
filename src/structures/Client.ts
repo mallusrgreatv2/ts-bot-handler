@@ -9,18 +9,18 @@ import winston from "winston";
 import mongoose from "mongoose";
 import "dotenv/config";
 
-import ClientConfig from "@/Interfaces/ClientConfig.js";
-import initHandlers from "@/Handlers/index.js";
+import ClientConfig from "@/interfaces/ClientConfig.js";
+import initHandlers from "@/handlers/index.js";
 
-import Command from "@/Structures/Command.js";
-import Modal from "@/Structures/Modal.js";
-import Button from "@/Structures/Button.js";
-import StringSelect from "@/Structures/Select/String.js";
-import ChannelSelect from "@/Structures/Select/Channel.js";
-import RoleSelect from "@/Structures/Select/Role.js";
-import UserSelect from "@/Structures/Select/User.js";
-import MentionableSelect from "@/Structures/Select/Mentionable.js";
-import ContextMenu from "@/Structures/ContextMenu.js";
+import Command from "@/structures/Command.js";
+import Modal from "@/structures/Modal.js";
+import Button from "@/structures/Button.js";
+import StringSelect from "@/structures/Select/String.js";
+import ChannelSelect from "@/structures/Select/Channel.js";
+import RoleSelect from "@/structures/Select/Role.js";
+import UserSelect from "@/structures/Select/User.js";
+import MentionableSelect from "@/structures/Select/Mentionable.js";
+import ContextMenu from "@/structures/ContextMenu.js";
 
 export default class Client extends BaseClient {
   readonly config: ClientConfig = process.env as unknown as ClientConfig;
@@ -81,7 +81,7 @@ export default class Client extends BaseClient {
         ].includes(error.code)
       ) {
         this.logger.error(
-          "It seems you have enabled intents that are disabled in the developer portal. Either remove them from src/Structures/Client.ts:45:16 or enable them from the developer portal."
+          "It seems you have enabled intents that are disabled in the developer portal. Either remove them from src/structures/Client.ts:45:16 or enable them from the developer portal."
         );
         this.logger.error(
           "If you already filled it out, the token is invalid!"

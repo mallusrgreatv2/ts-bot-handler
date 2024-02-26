@@ -1,7 +1,7 @@
 import { ClientEvents } from "discord.js";
 import fs from "fs/promises";
-import Client from "@/Structures/Client.js";
-import Event from "@/Structures/Event.js";
+import Client from "@/structures/Client.js";
+import Event from "@/structures/Event.js";
 async function eventHandler(client: Client) {
   const dirs = await fs.readdir("./dist/Events");
 

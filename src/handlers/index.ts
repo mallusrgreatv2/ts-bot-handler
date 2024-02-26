@@ -1,4 +1,4 @@
-import Client from "@/Structures/Client.js";
+import Client from "@/structures/Client.js";
 import buttonHandler from "./buttonHandler.js";
 import commandHandler from "./commandHandler.js";
 import contextMenuHandler from "./contextMenuHandler.js";

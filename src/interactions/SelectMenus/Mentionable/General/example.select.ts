@@ -1,4 +1,4 @@
-import MentionableSelect from "@/Structures/Select/Mentionable.js";
+import MentionableSelect from "@/structures/Select/Mentionable.js";
 
 export default new MentionableSelect({
   customId: "example",
