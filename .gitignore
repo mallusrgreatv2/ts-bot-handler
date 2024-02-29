@@ -2,3 +2,5 @@ node_modules
 dist
 .env
 logs.log
+package-lock.json
+yarn.lock
