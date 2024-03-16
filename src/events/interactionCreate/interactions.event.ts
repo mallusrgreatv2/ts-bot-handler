@@ -27,6 +27,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command:");
         console.error(err);
       }
     } else if (interaction.isAutocomplete()) {
@@ -34,7 +35,15 @@ export default new Event({
         (a) => a.data.name === interaction.commandName
       );
       if (!command) return;
-      if (command.autocomplete) await command.autocomplete(client, interaction);
+      if (command.autocomplete) {
+        try {
+          await command.autocomplete(client, interaction);
+        } catch (err) {
+          if (!interaction.responded) await interaction.respond([]);
+          console.error("Error when executing slash command autocomplete:");
+          console.error(err);
+        }
+      }
     } else if (interaction.isModalSubmit()) {
       const modal = client.modals.find(
         (a) => a.customId === interaction.customId
@@ -55,6 +64,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     } else if (interaction.isButton()) {
@@ -77,6 +87,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     } else if (interaction.isStringSelectMenu()) {
@@ -99,6 +110,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     } else if (interaction.isRoleSelectMenu()) {
@@ -121,6 +133,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     } else if (interaction.isChannelSelectMenu()) {
@@ -143,6 +156,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     } else if (interaction.isMentionableSelectMenu()) {
@@ -165,6 +179,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     } else if (interaction.isUserSelectMenu()) {
@@ -187,6 +202,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     } else if (interaction.isContextMenuCommand()) {
@@ -209,6 +225,7 @@ export default new Event({
             await interaction.reply("An error has occured.");
           } catch (err) {}
         }
+        console.error("Error when executing slash command autocomplete:");
         console.error(err);
       }
     }
