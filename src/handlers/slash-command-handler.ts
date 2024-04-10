@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import type Client from "@/structures/client.js";
 import type Command from "@/structures/command.js";
 export default async function commandHandler(client: Client) {
-	const directories = await fs.readdir("./dist/interactions/SlashCommands");
+	const directories = await fs.readdir("./dist/interactions/slash-commands");
 	for (const directory of directories) {
 		const files = (
 			await fs.readdir(`./dist/interactions/slash-commands/${directory}/`)
