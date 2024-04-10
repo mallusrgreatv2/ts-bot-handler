@@ -3,7 +3,7 @@
 ## Features
 
 - All types of interactions supported
-- Proper logging system and save logs into a file (logs.log)
+- Proper logging system with debug logs in development environment
 - Fully typed
 - Optional MongoDB support
 
