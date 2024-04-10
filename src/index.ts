@@ -1,2 +1,2 @@
-import Client from "./structures/Client.js";
+import Client from "./structures/client.js";
 new Client().init();

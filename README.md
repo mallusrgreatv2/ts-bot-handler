@@ -22,9 +22,8 @@ Supported interactions:
 2. `npm install` or `yarn install`
 3. Copy content of [`.env.example`](https://github.com/mallusrgreatv2/ts-bot-handler/blob/master/.env.example) to a new file called .env
 4. Change the values in .env
-5. `npm start` or `yarn start`
+5. Run the dev script for development purposes (enables debug logs), or the start script in production.
 
 ## Rules
 
-- For any interaction or event, name them `(name).(command|event|modal|menu|select|button).ts`
-- For disabled commands, name them `(name).disabled.ts`
+- For disabled commands, events, selects, buttons, context menus, or modals, name them `(name).disabled.ts`

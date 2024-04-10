@@ -1,6 +1,6 @@
-import Button from "@/structures/button.js";
+import StringSelect from "@/structures/select/string.js";
 
-export default new Button({
+export default new StringSelect({
 	customId: "example",
 	async run(client, interaction) {
 		await interaction.reply("Hello!");
